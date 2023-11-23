@@ -18,7 +18,8 @@
       "christian-kohler.npm-intellisense",
       "formulahendry.auto-rename-tag",
       "esbenp.prettier-vscode",
-      "christian-kohler.path-intellisense"
+      "christian-kohler.path-intellisense",
+      "antfu.iconify"
     ]
   }
 }
