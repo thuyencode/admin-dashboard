@@ -1,6 +1,10 @@
-# Admin Dashboard
+# Project: Admin Dashboard
 
-[More detail information here](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
+[More detail information here](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
+
+| ![Admin Dashboard on desktop on mobile devices be like](https://i.ibb.co/8mFpZCT/Screenshot-20231128-113145-1.png) |
+| :----------------------------------------------------------------------------------------------------------------: |
+|                                            It's also very responsive 📱                                            |
 
 ## Getting started
 
