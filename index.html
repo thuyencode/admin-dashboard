@@ -5,9 +5,642 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/index.css" />
-    <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=roboto-flex:400"
+      rel="stylesheet"
+    />
+    <script type="module" src="src/main.js" defer></script>
+    <script src="./node_modules/preline/dist/preline.js" defer></script>
+    <title>Admin Dashboard | Thuyen Code | The Odin Project</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="flex h-screen overflow-y-hidden bg-[#E2E8F0] text-slate-800">
+    <nav
+      class="left-sidebar max-md:hidden"
+      id="left-sidebar"
+      aria-label="the left sidebar"
+    >
+      <p class="title">
+        <iconify-icon
+          class="text-4xl max-md:hidden"
+          icon="mdi:view-dashboard"
+        ></iconify-icon>
+        Dashboard
+      </p>
+      <ul>
+        <li class="group">
+          <iconify-icon icon="mdi:home"></iconify-icon>
+          <span class="group-hover:border-white">Home</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:card-account-details-outline"></iconify-icon>
+          <span class="group-hover:border-white">Profile</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:message"></iconify-icon>
+          <span class="group-hover:border-white">Messages</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:clock-time-four"></iconify-icon>
+          <span class="group-hover:border-white">History</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:note-multiple"></iconify-icon>
+          <span class="group-hover:border-white">Tasks</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:account-group"></iconify-icon>
+          <span class="group-hover:border-white">Communities</span>
+        </li>
+      </ul>
+      <ul>
+        <li class="group">
+          <iconify-icon icon="mdi:cog"></iconify-icon>
+          <span class="group-hover:border-white">Settings</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:help-box"></iconify-icon>
+          <span class="group-hover:border-white">Support</span>
+        </li>
+        <li class="group">
+          <iconify-icon icon="mdi:shield-check"></iconify-icon>
+          <span class="group-hover:border-white">Privacy</span>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="w-full overflow-y-auto">
+      <nav class="top-navbar" aria-label="top-navbar">
+        <iconify-icon
+          class="text-3xl hover:opacity-90 max-md:fixed max-md:z-20 md:hidden"
+          icon="mdi:view-dashboard"
+          id="left-sidebar-toggle"
+          aria-label="the left sidebar toggle"
+        ></iconify-icon>
+        <div class="inline-flex items-center gap-2 max-md:ml-10">
+          <iconify-icon
+            icon="ri:account-circle-fill"
+            class="max-[450px]:hidden md:!text-6xl"
+          ></iconify-icon>
+          <p class="flex-col gap-1 text-sm font-semibold md:inline-flex">
+            Hi there,
+            <span class="line-clamp-1 text-lg md:text-xl">
+              Thuyen Code
+              <span class="font-normal max-md:hidden">@thuyencode</span>
+            </span>
+          </p>
+        </div>
+
+        <button type="button" class="ml-auto">New</button>
+        <button type="button">Upload</button>
+        <button type="button">Share</button>
+      </nav>
+
+      <nav class="top-navbar sticky top-0 shadow-lg" aria-label="top-navbar">
+        <div class="flex w-full items-center gap-3 md:w-2/3 lg:gap-5">
+          <label for="search" class="sr-only">Search </label>
+          <iconify-icon
+            icon="ri:search-line"
+            class="text-xl max-md:ml-10"
+          ></iconify-icon>
+          <input
+            type="text"
+            name="keyword"
+            id="search"
+            class="h-8 w-full rounded-full border-none bg-[#E2E8F0]"
+          />
+        </div>
+
+        <div class="inline-flex items-center gap-3">
+          <div class="group inline-flex items-center text-xl">
+            <iconify-icon
+              icon="ri:notification-2-line"
+              class="group-hover:hidden"
+            ></iconify-icon>
+            <iconify-icon
+              icon="ri:notification-2-fill"
+              class="hidden group-hover:inline-block"
+            ></iconify-icon>
+          </div>
+          <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+          <p class="line-clamp-1 font-semibold max-md:hidden">Thuyen Code</p>
+        </div>
+      </nav>
+
+      <main class="dashboard">
+        <nav class="right-sidebar" aria-label="right-sidebar">
+          <div class="announcements">
+            <p class="head-title">Announcements</p>
+            <ul class="card">
+              <li>
+                <p class="small-title">Site Maintenance</p>
+                <p class="small-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magnam
+                  aliquam quaerat.
+                </p>
+              </li>
+              <span class="seperator"></span>
+              <li>
+                <p class="small-title">Community Share Day</p>
+                <p class="small-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magnam
+                  aliquam quaerat.
+                </p>
+              </li>
+              <span class="seperator"></span>
+              <li>
+                <p class="small-title">Updated Privacy Policy</p>
+                <p class="small-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magnam
+                  aliquam quaerat.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="trending">
+            <p class="head-title">Trending</p>
+            <ul class="card">
+              <li>
+                <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+                <p class="small-title">
+                  @thuyencode
+                  <span>Junior developer</span>
+                </p>
+              </li>
+              <li>
+                <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+                <p class="small-title">
+                  @thuyencode
+                  <span>Junior developer</span>
+                </p>
+              </li>
+              <li>
+                <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+                <p class="small-title">
+                  @thuyencode
+                  <span>Junior developer</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="projects">
+          <p class="head-title">Your projects</p>
+          <div class="grid grid-cols-ram gap-3 lg:gap-6">
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <main class="mobile-dashboard md:hidden">
+        <nav
+          class="sticky top-14 flex bg-white text-center shadow-lg"
+          aria-label="Tabs"
+          role="tablist"
+        >
+          <button
+            type="button"
+            class="active hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600"
+            id="basic-tabs-item-projects"
+            data-hs-tab="#basic-tabs-projects"
+            aria-controls="basic-tabs-projects"
+            role="tab"
+          >
+            Your projects
+          </button>
+          <button
+            type="button"
+            class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600"
+            id="basic-tabs-item-announcements"
+            data-hs-tab="#basic-tabs-announcements"
+            aria-controls="basic-tabs-announcements"
+            role="tab"
+          >
+            Announcements
+          </button>
+          <button
+            type="button"
+            class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600"
+            id="basic-tabs-item-trending"
+            data-hs-tab="#basic-tabs-trending"
+            aria-controls="basic-tabs-trending"
+            role="tab"
+          >
+            Trending
+          </button>
+        </nav>
+
+        <div class="p-2">
+          <div
+            class="projects space-y-2"
+            id="basic-tabs-projects"
+            role="tabpanel"
+            aria-labelledby="basic-tabs-item-projects"
+          >
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small-title">Lorem ipsum dolor</p>
+              <p class="small-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magnam aliquam
+                quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+                dolemus, fieri tamen permagna accessio potest, si aliquod
+                aeternum.
+              </p>
+              <div class="icons">
+                <iconify-icon icon="mdi:star-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:eye-plus-outline"></iconify-icon>
+                <iconify-icon icon="mdi:share-variant-outline"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div
+            id="basic-tabs-announcements"
+            class="announcements hidden"
+            role="tabpanel"
+            aria-labelledby="basic-tabs-item-announcements"
+          >
+            <ul class="card">
+              <li>
+                <p class="small-title">Site Maintenance</p>
+                <p class="small-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magnam
+                  aliquam quaerat.
+                </p>
+              </li>
+              <span class="seperator"></span>
+              <li>
+                <p class="small-title">Community Share Day</p>
+                <p class="small-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magnam
+                  aliquam quaerat.
+                </p>
+              </li>
+              <span class="seperator"></span>
+              <li>
+                <p class="small-title">Updated Privacy Policy</p>
+                <p class="small-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magnam
+                  aliquam quaerat.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div
+            id="basic-tabs-trending"
+            class="trending hidden"
+            role="tabpanel"
+            aria-labelledby="basic-tabs-item-trending"
+          >
+            <ul class="card">
+              <li>
+                <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+                <p class="small-title">
+                  @thuyencode
+                  <span>Junior developer</span>
+                </p>
+              </li>
+              <span class="seperator"></span>
+              <li>
+                <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+                <p class="small-title">
+                  @thuyencode
+                  <span>Junior developer</span>
+                </p>
+              </li>
+              <span class="seperator"></span>
+              <li>
+                <iconify-icon icon="ri:account-circle-fill"></iconify-icon>
+                <p class="small-title">
+                  @thuyencode
+                  <span>Junior developer</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
