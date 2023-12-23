@@ -5,22 +5,22 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    'node_modules/preline/dist/*.js',
+    'node_modules/preline/dist/*.js'
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto Flex', ...defaultTheme.fontFamily.sans],
+        sans: ['Roboto Flex', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         primary: '#1992D4',
-        secondary: '#FACC15',
+        secondary: '#FACC15'
       },
       height: { screen: '100dvh' },
       gridTemplateColumns: {
-        ram: 'repeat(auto-fit, minmax(250px, 1fr))',
-      },
-    },
+        ram: 'repeat(auto-fit, minmax(250px, 1fr))'
+      }
+    }
   },
-  plugins: [require('@tailwindcss/forms'), require('preline/plugin')],
+  plugins: [require('@tailwindcss/forms'), require('preline/plugin')]
 }
